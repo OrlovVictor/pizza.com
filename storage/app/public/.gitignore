@@ -1,2 +1,5 @@
 *
+!product
+!product/picture
+!product/picture/*
 !.gitignore
