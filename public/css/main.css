@@ -6,3 +6,5 @@ html, body {
 	height: 100vh;
 	margin: 0;
 }
+
+main { padding:20px 10px; }

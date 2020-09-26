@@ -2,6 +2,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Product extends Model {
 	/**
@@ -25,4 +26,12 @@ class Product extends Model {
 		'price' => 0.0,
 		'position' => 0,
 	];
+
+	/**
+	 * Returns product picture URL.
+	 * @return string
+	 */
+	public function getPictureUrl(): string {
+		return Storage::url('product/picture/'.$this->picture);
+	}
 }

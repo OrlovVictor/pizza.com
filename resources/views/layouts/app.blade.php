@@ -13,9 +13,10 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
 	    <!-- Fonts -->
 	    <link href="//fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
+        <!-- Application-wide CSS. -->
         <link href="/css/main.css" rel="stylesheet">
+        <!-- Page specific CSS. -->
+        @yield('css')
     </head>
 
     <body>
@@ -37,7 +38,7 @@
             </div>
         </nav>
 
-        <main role="main" class="container">
+        <main role="main" class="container-fluid">
 			@yield('content')
         </main>
 
