@@ -14,7 +14,7 @@ class ProductSeeder extends Seeder {
 		    'type' => 'pizza',
 		    'name' => 'American Hottest pizza',
 		    'description' => 'Hot yellow Amarillo chili sauce topped with mozzarella, pepperoni and jalapeño peppers',
-		    'picture' => '',
+		    'picture' => 'american-hottest-pizza.jpg',
 		    'price' => 15.00
 	    ]);
 
@@ -22,7 +22,7 @@ class ProductSeeder extends Seeder {
 		    'type' => 'pizza',
 		    'name' => 'The Mexican pizza',
 		    'description' => 'Spicy Beef, jalapeño peppers, green peppers, onion and red chilli peppers',
-		    'picture' => '',
+		    'picture' => 'mexican.jpg',
 		    'price' => 16.00
 	    ]);
 
@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder {
 		    'type' => 'pizza',
 		    'name' => 'Cheese & Tomato pizza',
 		    'description' => 'Tomato sauce and mozzarella cheese',
-		    'picture' => '',
+		    'picture' => 'cheese-and-tomato.jpg',
 		    'price' => 17.00
 	    ]);
 
@@ -38,7 +38,7 @@ class ProductSeeder extends Seeder {
 		    'type' => 'pizza',
 		    'name' => 'Vegan cheese & Tomato pizza',
 		    'description' => 'Tomato sauce and vegan cheese',
-		    'picture' => '',
+		    'picture' => 'vegan-cheese-and-tomato.jpg',
 		    'price' => 18.00
 	    ]);
 
@@ -46,7 +46,7 @@ class ProductSeeder extends Seeder {
 		    'type' => 'pizza',
 		    'name' => 'The Greek pizza',
 		    'description' => 'Feta cheese, Onion, tomatoes, black olives and oregano',
-		    'picture' => '',
+		    'picture' => 'greek.jpg',
 		    'price' => 19.00
 	    ]);
 
@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder {
 		    'type' => 'pizza',
 		    'name' => 'Garden Party pizza',
 		    'description' => 'Tomatoes, onions, green peppers, sweetcorn and chestnut mushrooms',
-		    'picture' => '',
+		    'picture' => 'garden-party.jpg',
 		    'price' => 20.00
 	    ]);
 
@@ -62,7 +62,7 @@ class ProductSeeder extends Seeder {
 		    'type' => 'pizza',
 		    'name' => 'Chili Freak pizza',
 		    'description' => 'Hot yellow Amarillo chili sauce, green peppers, red chili peppers, jalapeño peppers and onions',
-		    'picture' => '',
+		    'picture' => 'chili-freak.jpg',
 		    'price' => 21.00
 	    ]);
 
@@ -70,7 +70,7 @@ class ProductSeeder extends Seeder {
 		    'type' => 'pizza',
 		    'name' => 'Hawaiian pizza',
 		    'description' => 'Ham with juicy pineapple chunks',
-		    'picture' => '',
+		    'picture' => 'hawaiian.jpg',
 		    'price' => 22.00
 	    ]);
     }
