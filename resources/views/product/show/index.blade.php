@@ -7,28 +7,30 @@
 @endsection
 
 @section('content')
-	<section class="products">
+	<section class="products row">
 		@foreach($products as $product)
-			<article class="product-card">
-				<div class="row">
-					<div class="col col-12 picture">
-						<img src="{{ $product->getPictureUrl() }}" />
+			<div class="product col col-12 col-sm-6 col-lg-4 col-xl-3">
+				<article class="product-card">
+					<div class="row">
+						<div class="col col-12 picture">
+							<img src="{{ $product->getPictureUrl() }}" />
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col title">
-						{{ $product->name }}
+					<div class="row">
+						<div class="col title">
+							{{ $product->name }}
+						</div>
+						<div class="price">
+							{{ $product->price + 0 }} €
+						</div>
 					</div>
-					<div class="price">
-						{{ $product->price + 0 }} €
+					<div class="row">
+						<div class="col col-12 description">
+							{{ $product->description }}
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col col-12 description">
-						{{ $product->description }}
-					</div>
-				</div>
-			</article>
+				</article>
+			</div>
 		@endforeach
 	</section>
 @endsection
