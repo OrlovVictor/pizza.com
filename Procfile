@@ -1,4 +1,4 @@
-release:
+release: cp .env.heroku .env
   cp .env.heroku .env
   php artisan key:generate
   php artisan migrate:fresh --seed
