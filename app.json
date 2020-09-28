@@ -1,0 +1,33 @@
+{
+	"name": "pizza.com",
+	"description": "pizza.com is a sample app (website) built with Laravel, Bootstrap, jQuery",
+	"repository": "https://github.com/OrlovVictor/pizza.com/",
+	"logo": "https://raw.githubusercontent.com/laravel/art/master/laravel-logo.png",
+	"keywords": ["php", "laravel", "bootstrap"],
+	"env": {
+		"APP_NAME": {
+			"description": "App name.",
+			"value": "pizza.com"
+		},
+
+		"APP_ENV": {
+			"description": "APP_ENV.",
+			"value": "local"
+		},
+
+		"APP_KEY": {
+			"description": "A secret app key.",
+			"value": "base64:4Bhziw6vgMipsO4QLuT5+X3aZAHX2tan1m9QagaS+2A="
+		},
+
+		"APP_DEBUG": {
+			"description": "Debug mode.",
+			"value": "true"
+		},
+
+		"DATABASE_URL": {
+			"description": "Database URL (dsn).",
+			"value": "mysql://nrlhiptefmhd9s65:af7xrtww3u3ca5la@sm9j2j5q6c8bpgyq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/bgfva794keml1vaa"
+		}
+	}
+}
