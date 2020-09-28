@@ -20,3 +20,19 @@ php artisan key:generate
 php artisan migrate:fresh --seed
 ln -s ../storage/app/public public/storage
 ```
+
+#### Deploy as Heroku app
+
+Either push the button:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+... or follow these steps to deploy as Heroku app:
+
+```
+$ git clone https://github.com/OrlovVictor/pizza.com.git app
+$ cd app
+$ heroku create
+$ git push heroku release-0.1:master
+$ heroku open
+```
