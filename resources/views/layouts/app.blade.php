@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
+	    <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="icon" href="/favicon.png">
 
         <title>{{ env('APP_NAME') }} - @yield('title')</title>
@@ -43,6 +44,7 @@
 
         <script src="/js/notify-js/notify.min.js"></script>
         <script src="/js/notify-js-alert.js"></script>
+        <script src="/js/jquery.ajax.setup.js"></script>
         <script src="/js/extend.js"></script>
         <script src="/js/utils.js"></script>
 
