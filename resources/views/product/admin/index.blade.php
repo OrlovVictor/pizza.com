@@ -6,6 +6,10 @@
 	<link href="/css/product/admin.css" rel="stylesheet">
 @endsection
 
+@section('js')
+	<script src="/js/product/admin/crud.js"></script>
+@endsection
+
 @section('content')
 	<table class="products table table-striped">
 		<thead>
@@ -26,7 +30,7 @@
 					<td>{{ $product->price }}</td>
 					<td>
 						<!-- Delete button. -->
-						<a class="btn btn-sm btn-danger" target="_blank" href="{{ route('admin.product.delete', ['id' => $product->id]) }}">Delete</a>
+						<a class="btn btn-sm btn-danger js_delete" target="_blank" href="{{ route('admin.product.delete', ['id' => $product->id]) }}">Delete</a>
 
 					</td>
 				</tr>
