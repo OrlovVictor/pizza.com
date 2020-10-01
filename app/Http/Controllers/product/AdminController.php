@@ -13,4 +13,15 @@ class AdminController extends Controller {
 	public function index() {
 		return view('product.admin.index', ['products' => Product::all()]);
 	}
+
+	/**
+	 * CRUD: Delete product.
+	 * @param int $id
+	 * @return array
+	 */
+	public function delete(int $id) {
+		$product = Product::findOrFail($id);
+		$product->delete();
+		return ['result' => true];
+	}
 }
