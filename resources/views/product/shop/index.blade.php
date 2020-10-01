@@ -3,7 +3,7 @@
 @section('title', 'products')
 
 @section('css')
-	<link href="/css/product/show.css" rel="stylesheet">
+	<link href="/css/product/shop.css" rel="stylesheet">
 @endsection
 
 @section('content')

@@ -13,5 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'product\ShowController@index')->name('show.index');
+Route::get('/', 'product\ShopController@index')->name('shop.index');
 Route::get('/admin', 'product\AdminController@index')->name('admin.index');
