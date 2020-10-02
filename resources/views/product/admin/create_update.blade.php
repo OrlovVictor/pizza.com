@@ -25,5 +25,5 @@
 			<img src="{{ $product->getPictureUrl() }}" alt="{{ $product->picture }}" />
 		@endif
 	</div>
-	<button type="submit" class="btn btn-primary js_save">Save</button>
+	<button type="submit" class="btn btn-success js_save">Save</button>
 </form>
