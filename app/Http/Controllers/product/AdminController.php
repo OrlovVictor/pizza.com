@@ -18,6 +18,12 @@ class AdminController extends Controller {
 		]);
 	}
 
+	/**
+	 * CRUD: Update product.
+	 * @param Request $request
+	 * @param int $id
+	 * @return array
+	 */
 	public function update(Request $request, int $id) {
 		$product = Product::findOrFail($id);
 		$product->fill($request->all(['type', 'name', 'description', 'price']));
