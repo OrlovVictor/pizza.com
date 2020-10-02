@@ -28,10 +28,24 @@ class Product extends Model {
 	];
 
 	/**
+	 * The attributes that are mass assignable.
+	 * @var array
+	 */
+	protected $fillable = ['type', 'name', 'description', 'price'];
+
+	/**
 	 * Returns product picture URL.
 	 * @return string
 	 */
 	public function getPictureUrl(): string {
 		return Storage::url('product/picture/'.$this->picture);
+	}
+
+	/**
+	 * Returns allowed product types.
+	 * @return array
+	 */
+	public static function getTypes(): array {
+		return ['pizza'];
 	}
 }

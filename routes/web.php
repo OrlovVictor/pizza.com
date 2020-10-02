@@ -17,4 +17,5 @@ Route::get('/', 'product\ShopController@index')->name('shop.index');
 Route::get('/admin', 'product\AdminController@index')->name('admin.index');
 
 /* Products: CRUD. */
+Route::post('/admin/product/update/{id}', 'product\AdminController@update')->name('admin.product.update');
 Route::post('/admin/product/delete/{id}', 'product\AdminController@delete')->name('admin.product.delete');

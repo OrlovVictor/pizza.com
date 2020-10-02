@@ -1,1 +1,3 @@
 /* Styles used on products/admin page. */
+tr.js_edit td { padding: 0; }
+tr.js_edit td > div { padding: .75rem; background-color:#fafafa; }
