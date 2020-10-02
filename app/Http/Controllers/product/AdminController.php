@@ -20,14 +20,7 @@ class AdminController extends Controller {
 
 	public function update(Request $request, int $id) {
 		$product = Product::findOrFail($id);
-		$input = [];
-		foreach (['type', 'name', 'description', 'price'] as $key) {
-			$value = $request->input($key, null);
-			if ($value !== null) {
-				$input[$key] = $key === 'price' ? floatval($value) : $value;
-			}
-		}
-		$product->fill($input);
+		$product->fill($request->all(['type', 'name', 'description', 'price']));
 		$product->save();
 		return ['result' => true];
 	}

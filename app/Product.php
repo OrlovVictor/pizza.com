@@ -34,6 +34,14 @@ class Product extends Model {
 	protected $fillable = ['type', 'name', 'description', 'price'];
 
 	/**
+	 * Mutator: set product price.
+	 * @param $value
+	 */
+	public function setPriceAttribute($value) {
+		$this->attributes['price'] = round(floatval($value), 2);
+	}
+
+	/**
 	 * Returns product picture URL.
 	 * @return string
 	 */
