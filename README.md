@@ -10,7 +10,7 @@ and all the files should be put into `htdocs` subdirectory.
 
 ```bash
 cd /var/www/pizza.com
-git clone -b develop https://github.com/OrlovVictor/pizza.com.git htdocs
+git clone https://github.com/OrlovVictor/pizza.com.git htdocs
 chown -R :www-data htdocs
 cd htdocs
 composer update
@@ -33,6 +33,6 @@ Either push the button:
 $ git clone https://github.com/OrlovVictor/pizza.com.git app
 $ cd app
 $ heroku create
-$ git push heroku release-0.1:master
+$ git push heroku master:master
 $ heroku open
 ```
