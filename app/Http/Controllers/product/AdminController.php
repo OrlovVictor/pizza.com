@@ -21,6 +21,18 @@ class AdminController extends Controller {
 	/**
 	 * CRUD: Update product.
 	 * @param Request $request
+	 * @return array
+	 */
+	public function create(Request $request) {
+		$product = new Product();
+		$product->fill($request->all(['type', 'name', 'description', 'price']));
+		$product->save();
+		return ['result' => true, 'product' => $product];
+	}
+
+	/**
+	 * CRUD: Update product.
+	 * @param Request $request
 	 * @param int $id
 	 * @return array
 	 */

@@ -2,9 +2,10 @@
 
 	var Plugin = {
 
-		SELECTOR_EDIT: 'tr.js_edit',
+		SELECTOR_EDIT: '.js_edit',
 		SELECTOR_EDIT_COLLAPSE: '.js_edit .collapse',
-		SELECTOR_EDIT_BUTTON_SAVE: 'tr.js_edit button.js_save',
+		SELECTOR_EDIT_BUTTON_SAVE: '.js_edit form button.js_save',
+		SELECTOR_CREATE_BUTTON_SAVE: '.js_create form button.js_save',
 		SELECTOR_BUTTON_DELETE: '.js_delete',
 
 		init: function() {
@@ -14,6 +15,7 @@
 			$(this.SELECTOR_EDIT_COLLAPSE).on('show.bs.collapse', function (e) { $(e.target).closest(this.SELECTOR_EDIT).show(); }.bindToContext(this));
 			$(this.SELECTOR_EDIT_COLLAPSE).on('hidden.bs.collapse', function (e) { $(e.target).closest(this.SELECTOR_EDIT).hide(); }.bindToContext(this));
 			$(document).on('click', this.SELECTOR_EDIT_BUTTON_SAVE, this.save.bindToContext(this));
+			$(document).on('click', this.SELECTOR_CREATE_BUTTON_SAVE, this.save.bindToContext(this));
 		},
 
 		save: function(event) {

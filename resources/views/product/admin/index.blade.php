@@ -11,6 +11,15 @@
 @endsection
 
 @section('content')
+	<div class="row mb-2">
+		<div class="js_create col col-12">
+			<!-- Button for opening creation form. -->
+			<a class="btn btn-primary" data-toggle="collapse" href="#product_create" role="button">Add product</a>
+			<div class="collapse" id="product_create">
+				@include('product.admin.create_update', [ 'product' => null, 'url' => route('admin.product.create') ])
+			</div>
+		</div>
+	</div>
 	<table class="products table">
 		<thead>
 			<tr>
