@@ -43,10 +43,10 @@ class Product extends Model {
 
 	/**
 	 * Returns product picture URL.
-	 * @return string
+	 * @return string|null
 	 */
-	public function getPictureUrl(): string {
-		return Storage::url('product/picture/'.$this->picture);
+	public function getPictureUrl() {
+		return $this->picture ? Storage::url('product/picture/'.$this->picture) : null;
 	}
 
 	/**
