@@ -37,7 +37,7 @@
 					<td>{{ $product->type }}</td>
 					<td>{{ $product->name }}</td>
 					<td>{{ $product->price }}</td>
-					<td>
+					<td class="actions">
 						<!-- Edit button. -->
 						<a class="btn btn-sm btn-info" data-toggle="collapse" href="#product_{{ $product->id }}" role="button">Edit</a>
 						<!-- Delete button. -->
