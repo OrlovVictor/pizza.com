@@ -7,6 +7,7 @@ use App\Traits\UploadTrait;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
 
 class AdminController extends Controller {
@@ -30,6 +31,7 @@ class AdminController extends Controller {
 	 * @return array
 	 */
 	public function create(Request $request) {
+		$this->validateRequest($request, [ Product::IMAGE_INPUT_NAME => ['required'] ]);
 		$product = new Product();
 		$product->fill($request->all(['type', 'name', 'description', 'price']));
 		$imageFileName = $this->saveImage($request);
@@ -45,6 +47,7 @@ class AdminController extends Controller {
 	 * @return array
 	 */
 	public function update(Request $request, int $id) {
+		$this->validateRequest($request);
 		$product = Product::findOrFail($id);
 		$product->fill($request->all(['type', 'name', 'description', 'price']));
 		$imageFileName = $this->saveImage($request);
@@ -65,11 +68,28 @@ class AdminController extends Controller {
 	}
 
 	/**
+	 * Validate request with product data.
+	 * @param Request $request
+	 * @param array $optionalRules
+	 */
+	protected function validateRequest(Request $request, array $optionalRules = []) {
+		$rules = [
+			'type' => ['required', Rule::in(Product::getTypes())],
+			'name' => ['required', 'string', 'max:64'],
+			'description' => ['required', 'string', 'max:1024'],
+			'price' => ['required', 'numeric', 'min:0'],
+		];
+		$rules = array_merge($rules, $optionalRules);
+		$request->validate($rules);
+	}
+
+	/**
 	 * Save product image in the filesystem.
 	 * @param Request $request
 	 * @return string|null
 	 */
-	protected function saveImage(Request $request){
+	protected function saveImage(Request $request) {
+		// Validation: require image file, specify maximum size in kilobytes.
 		$request->validate([
 			Product::IMAGE_INPUT_NAME => ['mimes:jpeg,png', 'max:1024']
 		]);
