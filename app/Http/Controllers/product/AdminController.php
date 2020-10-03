@@ -37,7 +37,7 @@ class AdminController extends Controller {
 		$imageFileName = $this->saveImage($request);
 		if ($imageFileName) { $product->picture = $imageFileName; }
 		$product->save();
-		return ['result' => true, 'product' => $product];
+		return ['result' => true, 'product' => $product, 'pictureUrl' => $product->getPictureUrl()];
 	}
 
 	/**
@@ -96,8 +96,8 @@ class AdminController extends Controller {
 		// Get image file.
 		$image = $request->file(Product::IMAGE_INPUT_NAME);
 		if ($image instanceof UploadedFile) {
-			// Make an image name based on product name.
-			$name = Str::slug($request->input('name'));
+			// Make an image name based on product name, date and time.
+			$name = sprintf('%s_%s', Str::slug($request->input('name'), '_'), date('Ymd_His'));
 			// Define folder path.
 			$folder = '/product/picture';
 			// Save uploaded image.

@@ -27,11 +27,9 @@
 		</div>
 	</div>
 	<div class="form-group row">
-		@if (isset($product))
-			<div class="col-12 col-md-6 col-lg-4">
-				<img src="{{ $product->getPictureUrl() }}" alt="{{ $product->picture }}" />
-			</div>
-		@endif
+		<div class="col-12 col-md-6 col-lg-4">
+			<img class="js_picture" src="{{ $product ? $product->getPictureUrl() : null }}" alt="{{ $product ? $product->picture : null }}" />
+		</div>
 	</div>
 	<button type="submit" class="btn btn-success js_save">Save</button>
 </form>

@@ -7,6 +7,7 @@
 		SELECTOR_EDIT_BUTTON_SAVE: '.js_edit form button.js_save',
 		SELECTOR_CREATE_BUTTON_SAVE: '.js_create form button.js_save',
 		SELECTOR_BUTTON_DELETE: '.js_delete',
+		SELECTOR_PRODUCT_IMAGE: 'img.js_picture',
 
 		init: function() {
 			$(document).on('click', this.SELECTOR_BUTTON_DELETE, this.deleteProduct.bindToContext(this));
@@ -43,6 +44,10 @@
 				success: function (data) {
 					// Product is created or updated.
 					NotifyJsAlert.successWithTimeout('saved', 2, $button, 'right middle');
+					// Update product picture.
+					if (typeof data === 'object' && typeof data.pictureUrl === 'string') {
+						$form.find(this.SELECTOR_PRODUCT_IMAGE).attr('src', data.pictureUrl);
+					}
 				}.bindToContext(this),
 				error: function (jqXHR, textStatus, errorThrown) {
 					// Show error alert.
