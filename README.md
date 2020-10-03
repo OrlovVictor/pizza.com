@@ -1,5 +1,6 @@
 # pizza.com
-delivered in 42 minutes, or it is free
+
+Our mission is to deliver pizza in 42 minutes or less.
 
 ## How to deploy this app
 
