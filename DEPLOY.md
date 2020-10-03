@@ -2,7 +2,7 @@
 
 Either push the button:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/OrlovVictor/pizza.com/tree/master)
 
 ... or follow these steps to deploy as Heroku app:
 
