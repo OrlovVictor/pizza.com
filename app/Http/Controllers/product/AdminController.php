@@ -42,6 +42,7 @@ class AdminController extends Controller {
 	 */
 	public function update(Request $request, int $id) {
 		$this->validateRequest($request);
+		/** @var Product $product */
 		$product = Product::findOrFail($id);
 		$product->fill($request->all(['type', 'name', 'description', 'price']));
 		$product->saveImage($request);
@@ -53,8 +54,10 @@ class AdminController extends Controller {
 	 * CRUD: Delete product.
 	 * @param int $id
 	 * @return array
+	 * @throws \Exception
 	 */
 	public function delete(int $id) {
+		/** @var Product $product */
 		$product = Product::findOrFail($id);
 		$product->delete();
 		return ['result' => true];
