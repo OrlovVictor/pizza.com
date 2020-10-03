@@ -13,4 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'product\ShowController@index')->name('show.index');
+Route::get('/', 'product\ShopController@index')->name('shop.index');
+Route::get('/admin', 'product\AdminController@index')->name('admin.index');
+
+/* Products: CRUD. */
+Route::post('/admin/product/create', 'product\AdminController@create')->name('admin.product.create');
+Route::post('/admin/product/update/{id}', 'product\AdminController@update')->name('admin.product.update');
+Route::post('/admin/product/delete/{id}', 'product\AdminController@delete')->name('admin.product.delete');

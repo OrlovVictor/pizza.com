@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
+	    <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="icon" href="/favicon.png">
 
         <title>{{ env('APP_NAME') }} - @yield('title')</title>
@@ -29,11 +30,7 @@
 
             <div class="collapse navbar-collapse" id="navbar_menu">
                 <ul class="navbar-nav mr-auto">
-					{{--
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    --}}
+                    @include(config('laravel-menu.views.bootstrap-items'), ['items' => $mainMenu->roots()])
                 </ul>
             </div>
         </nav>
@@ -45,5 +42,13 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
 
+        <script src="/js/notify-js/notify.min.js"></script>
+        <script src="/js/notify-js-alert.js"></script>
+        <script src="/js/jquery.ajax.setup.js"></script>
+        <script src="/js/extend.js"></script>
+        <script src="/js/utils.js"></script>
+
+        <!-- Page specific javascript. -->
+        @yield('js')
     </body>
 </html>

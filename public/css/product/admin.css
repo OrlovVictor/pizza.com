@@ -1,0 +1,7 @@
+/* Styles used on products/admin page. */
+td.actions { min-width: 9rem; }
+tr.js_edit td { padding: 0; }
+tr.js_edit td > div { padding: .75rem; background-color:#fafafa; }
+div#product_create { padding: .75rem; background-color:#fafafa; }
+form div > img { width: 100%; }
+#js_delete_confirmation .js_item_name { font-weight: bold; }
