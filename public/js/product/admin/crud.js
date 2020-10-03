@@ -16,6 +16,12 @@
 			$(this.SELECTOR_EDIT_COLLAPSE).on('hidden.bs.collapse', function (e) { $(e.target).closest(this.SELECTOR_EDIT).hide(); }.bindToContext(this));
 			$(document).on('click', this.SELECTOR_EDIT_BUTTON_SAVE, this.save.bindToContext(this));
 			$(document).on('click', this.SELECTOR_CREATE_BUTTON_SAVE, this.save.bindToContext(this));
+
+			// Set event handler: update file name after user selects file.
+			$('.js_upload input[type=file]').on('change', null, function (e) {
+				var fileName = $(this).val().split(/[\\|/]/).pop();
+				$(this).parent().find('label').text(fileName);
+			});
 		},
 
 		save: function(event) {
@@ -27,7 +33,13 @@
 				url: $form.attr('action'),
 				method: 'post',
 				dataType: 'json',
-				data: $form.serialize(),
+				data: new FormData($form[0]),
+
+				// Tell jQuery not to process data or worry about content-type.
+				cache: false,
+				contentType: false,
+				processData: false,
+
 				success: function (data) {
 					// Product is created or updated.
 					NotifyJsAlert.successWithTimeout('saved', 2, $button, 'right middle');

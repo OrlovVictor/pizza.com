@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
 class Product extends Model {
+	const IMAGE_INPUT_NAME = 'product_image';
+
 	/**
 	 * The table associated with the model.
 	 * @var string

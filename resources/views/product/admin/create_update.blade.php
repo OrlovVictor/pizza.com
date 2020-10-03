@@ -1,4 +1,4 @@
-<form method="post" action="{{ $url }}">
+<form method="post" action="{{ $url }}" enctype="multipart/form-data">
 	@csrf
 	<div class="form-group">
 		<label>Product name</label>
@@ -21,8 +21,16 @@
 		<input name="price" type="number" class="form-control" min="0" step="0.01" value="{{ isset($product) ? $product->price : 0.0 }}">
 	</div>
 	<div class="form-group">
+		<div class="custom-file js_upload">
+			<input type="file" name="{{ $imageInputName }}" class="custom-file-input">
+			<label class="custom-file-label">Select product image</label>
+		</div>
+	</div>
+	<div class="form-group row">
 		@if (isset($product))
-			<img src="{{ $product->getPictureUrl() }}" alt="{{ $product->picture }}" />
+			<div class="col-12 col-md-6 col-lg-4">
+				<img src="{{ $product->getPictureUrl() }}" alt="{{ $product->picture }}" />
+			</div>
 		@endif
 	</div>
 	<button type="submit" class="btn btn-success js_save">Save</button>
