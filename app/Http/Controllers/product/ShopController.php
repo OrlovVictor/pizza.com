@@ -16,6 +16,15 @@ class ShopController extends Controller {
 	}
 
 	/**
+	 * Show product cart page.
+	 * @return View
+	 */
+	public function cart() {
+		$cart = new ProductCart();
+		return view('product.shop.cart', ['cart' => $cart]);
+	}
+
+	/**
 	 * Add product into the cart.
 	 * @param int $productId
 	 * @return array[]
