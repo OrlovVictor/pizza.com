@@ -24,6 +24,16 @@ class ProductCartItem {
 	}
 
 	/**
+	 * @return Product
+	 */
+	public function getProduct() { return $this->product; }
+
+	/**
+	 * @return int
+	 */
+	public function getCount() { return $this->count; }
+
+	/**
 	 * Increases item's count.
 	 * @return bool
 	 */
@@ -57,9 +67,5 @@ class ProductCartItem {
 		$result = [];
 		foreach ($fields as $field) { $result[$field] = $this->{$field}; }
 		return $result;
-	}
-
-	public function __toString() {
-		return json_encode($this->toArray());
 	}
 }

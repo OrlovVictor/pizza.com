@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 /* Shop: products list, product cart actions. */
 Route::get('/', 'product\ShopController@index')->name('shop.index');
 Route::get('/cart', 'product\ShopController@cart')->name('shop.cart');
-Route::get('/cart/get', 'product\ShopController@getCart');
-Route::post('/cart/add/{productId}', 'product\ShopController@addProduct');
-Route::post('/cart/remove/{productId}', 'product\ShopController@removeProduct');
+Route::get('/cart/items', 'product\ShopController@getCartItems')->name('shop.cart.items');
+Route::post('/cart/add/{productId}', 'product\ShopController@addProduct')->name('shop.cart.add');
+Route::post('/cart/remove/{productId}', 'product\ShopController@removeProduct')->name('shop.cart.remove');
 
 /* Admin page: products list. */
 Route::get('/admin', 'product\AdminController@index')->name('admin.index');

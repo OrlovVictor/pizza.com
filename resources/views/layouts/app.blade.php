@@ -32,6 +32,9 @@
                 <ul class="navbar-nav mr-auto">
                     @include(config('laravel-menu.views.bootstrap-items'), ['items' => $mainMenu->roots()])
                 </ul>
+                <div class="my-2 my-lg-0 mr-1">
+                    @yield('product_cart')
+                </div>
             </div>
         </nav>
 

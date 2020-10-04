@@ -18,6 +18,12 @@ class ProductCart {
 
 	/**
 	 * Returns array of cart items.
+	 * @return ProductCartItem[]
+	 */
+	public function getItems() { return array_values($this->items); }
+
+	/**
+	 * Returns cart items as 2-dimensional array.
 	 * @return array[]
 	 */
 	public function toArray() {
@@ -25,9 +31,9 @@ class ProductCart {
 	}
 
 	/**
-	 * Add one more product into the cart.
+	 * Adds one more product into the cart.
 	 * @param int $productId
-	 * @return $this
+	 * @return int
 	 */
 	public function addProduct(int $productId) {
 		if (array_key_exists($productId, $this->items)) {
@@ -36,13 +42,13 @@ class ProductCart {
 			$this->items[$productId] = new ProductCartItem($productId, 1);
 		}
 		$this->store();
-		return $this;
+		return $this->getCountOf($productId);
 	}
 
 	/**
-	 * Add one more product into the cart.
+	 * Removes product from the cart.
 	 * @param int $productId
-	 * @return $this
+	 * @return int
 	 */
 	public function removeProduct(int $productId) {
 		if (array_key_exists($productId, $this->items)) {
@@ -52,11 +58,20 @@ class ProductCart {
 			}
 		}
 		$this->store();
-		return $this;
+		return $this->getCountOf($productId);
 	}
 
 	/**
-	 * Load cart items from the storage.
+	 * Returns count of the given product.
+	 * @param int $productId
+	 * @return int
+	 */
+	public function getCountOf(int $productId) {
+		return isset($this->items[$productId]) ? $this->items[$productId]->getCount() : 0;
+	}
+
+	/**
+	 * Loads cart items from the storage.
 	 * @return bool
 	 */
 	protected function load() {
@@ -71,7 +86,7 @@ class ProductCart {
 	}
 
 	/**
-	 * Put cart items into the storage.
+	 * Saves cart items in the storage.
 	 * @return bool
 	 */
 	protected function store() {

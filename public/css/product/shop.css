@@ -5,6 +5,9 @@
 .product > .product-card .row {  margin-left:0 !important; margin-right:0 !important;}
 .product > .product-card .picture { margin: 10px 0; }
 .product > .product-card .picture img { width:100%; display:block; }
-.product > .product-card .title { font-size:24px; line-height:32px; font-weight:bold; }
+.product > .product-card .title { font-size:20px; font-weight:bold; line-height:32px; height:32px; overflow:hidden; }
 .product > .product-card .description { font-size:16px; padding:15px; }
-.product > .product-card .price { flex: 0 0 100px; text-align:center; font-size:32px; line-height:32px; }
+.product > .product-card .price { font-size:20px; font-weight:bold; line-height:32px; padding-left:15px; }
+.product > .product-card .js_actions_change button { font-size:22px; line-height:22px; font-weight: bold; }
+a.product_cart { color:#ccc; font-weight: bold; }
+a.product_cart:hover { color:#fff; }

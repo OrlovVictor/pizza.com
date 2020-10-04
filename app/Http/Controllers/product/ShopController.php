@@ -12,7 +12,8 @@ class ShopController extends Controller {
 	 * @return View
 	 */
 	public function index() {
-		return view('product.shop.index', ['products' => Product::all()]);
+		$cart = new ProductCart();
+		return view('product.shop.index', ['products' => Product::all(), 'cart' => $cart]);
 	}
 
 	/**
@@ -31,7 +32,7 @@ class ShopController extends Controller {
 	 */
 	public function addProduct(int $productId) {
 		$cart = new ProductCart();
-		return $cart->addProduct($productId)->toArray();
+		return ['count' => $cart->addProduct($productId)];
 	}
 
 	/**
@@ -41,14 +42,14 @@ class ShopController extends Controller {
 	 */
 	public function removeProduct(int $productId) {
 		$cart = new ProductCart();
-		return $cart->removeProduct($productId)->toArray();
+		return ['count' => $cart->removeProduct($productId)];
 	}
 
 	/**
 	 * Returns cart items as array.
 	 * @return array[]
 	 */
-	public function getCart() {
+	public function getCartItems() {
 		$cart = new ProductCart();
 		return $cart->toArray();
 	}
