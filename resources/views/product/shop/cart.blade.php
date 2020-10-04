@@ -1,7 +1,7 @@
 @extends('layouts.app')
 <?php /** @var \App\ProductCart $cart */ ?>
 
-@section('title', 'products')
+@section('title', 'cart')
 
 @section('css')
 	<link href="/css/product/shop.css" rel="stylesheet">
